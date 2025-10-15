@@ -15,5 +15,30 @@ package com.sample.kotlinquizchallenge
 * */
 
 fun main() {
+    println(findBinaryGap(9))
+    println(findBinaryGap(529))
+    println(findBinaryGap(32))
+}
 
+fun findBinaryGap(n: Int): Int {
+    val binary = n.toString(2)
+    var maxGap = 0
+    var currentGap = 0
+    var isCounting = false
+
+    for (bit in binary) {
+        when (bit) {
+            '1' -> {
+                if (isCounting) {
+                    maxGap = maxOf(maxGap, currentGap)
+                    currentGap = 0
+                } else {
+                    isCounting = true
+                }
+            }
+            '0' -> if (isCounting) currentGap++
+        }
+    }
+
+    return maxGap
 }
