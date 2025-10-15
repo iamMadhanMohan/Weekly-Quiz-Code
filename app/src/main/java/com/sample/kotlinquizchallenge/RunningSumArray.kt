@@ -13,5 +13,16 @@ package com.sample.kotlinquizchallenge
 * */
 
 fun main() {
+    println(runningSum(intArrayOf(1, 2, 3, 4)).toList())
+    println(runningSum(intArrayOf(3, 1, 2, 10, 1)).toList())
+}
 
+fun runningSum(nums: IntArray): IntArray {
+    val result = IntArray(nums.size)
+    var sum = 0
+    for (i in nums.indices) {
+        sum += nums[i]
+        result[i] = sum
+    }
+    return result
 }
