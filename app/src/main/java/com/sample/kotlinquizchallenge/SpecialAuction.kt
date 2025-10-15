@@ -16,5 +16,22 @@ package com.sample.kotlinquizchallenge
 * */
 
 fun main() {
+    val auction = Auction()
 
+    println(auction.placeBid(50))
+    println(auction.placeBid(30))
+    println(auction.placeBid(75))
+}
+
+class Auction {
+    private var currentBid: Int? = null
+
+    fun placeBid(amount: Int): Int? {
+        return if (currentBid == null || amount > currentBid!!) {
+            currentBid = amount
+            currentBid
+        } else {
+            null
+        }
+    }
 }
