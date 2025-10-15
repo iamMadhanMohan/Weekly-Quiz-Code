@@ -12,4 +12,16 @@ package com.sample.kotlinquizchallenge
 
 fun main() {
 
+    println(notificationsSummary(0))
+    println(notificationsSummary(1))
+    println(notificationsSummary(12))
+    println(notificationsSummary(99))
+    println(notificationsSummary(100))
+    println(notificationsSummary(123))
 }
+
+fun notificationsSummary(numberOfNotifications: Int): String = when(numberOfNotifications) {
+        0 -> "No Notifications"
+        in 1..99 -> "You have $numberOfNotifications Notifications"
+        else -> "You have notifications 99+"
+    }
