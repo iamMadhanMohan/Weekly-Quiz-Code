@@ -14,5 +14,10 @@ package com.sample.kotlinquizchallenge
 * */
 
 fun main() {
+    println(removeVowels("Hello World"))
+    println(removeVowels("Kotlin Programming"))
+}
 
+fun removeVowels(text: String): String {
+    return text.replace(Regex("[aeiouAEIOU]"), "")
 }
